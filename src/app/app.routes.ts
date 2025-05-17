@@ -1,18 +1,21 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './component/login/login.component';
-import { RetailerListComponent } from './component/retailer/retailer-list/retailer-list.component';
 import { authGuard } from './guard/auth-guard.guard';
+import { HomePage } from './component/homepage/home-page.component';
 
 export const routes: Routes = [
+  // {
+  //   path: 'login',
+  //   component: LoginComponent,
+  //   canActivate: [authGuard]
+  // },
+  // {
+  //   path: 'retailer',
+  //   component: RetailerListComponent,
+  //   canActivate: [authGuard]
+  // },
   {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [authGuard]
-  },
-  {
-    path: 'retailer',
-    component: RetailerListComponent,
-    canActivate: [authGuard]
+    path: '**',
+    component: HomePage,
   },
   {
     path: '**', // Wildcard route
