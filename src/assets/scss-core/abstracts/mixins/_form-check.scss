@@ -1,0 +1,70 @@
+//----- Form check ----------------------------------------
+@mixin form-switch-variant(
+    $width: $form-switch-width,
+    $height: $form-switch-height,
+    $cursor: $form-switch-cursor-width
+    ) {
+    .#{$class-prefix}form-check-input {
+        width: $width;
+
+        ~.#{$class-prefix}form-check-text {
+            min-height: $height;
+            &:empty {
+                padding-left: $width;
+            }
+            &:not(:empty) {
+                padding-left: $width + $form-check-input-space;
+            }
+
+            &::before {
+                width: $width;
+                height: $height;
+            }
+
+            &::after {
+                transform: translateY(-50%);
+                @include box-size($cursor);
+                @include position-absolute($top: 50%, $left: ($height - $cursor)*0.5);
+            }
+        }
+
+        &:checked {
+            ~.#{$class-prefix}form-check-text {
+
+                &::after {
+                    left: ($width - $cursor - ($height - $cursor)*0.5);
+                }
+            }
+
+        }
+    }
+
+    &.#{$class-prefix}form-check-reverse {
+        .#{$class-prefix}form-check-input {
+            ~.#{$class-prefix}form-check-text {
+                &:empty {
+                    padding-right: $width;
+                }
+                &:not(:empty) {
+                    padding-right: $width + $form-check-input-space;
+                }
+                padding-left: 0;
+                &::after {
+                    right: ($width - $cursor - ($height - $cursor)*0.5);
+                }
+            }
+
+            &:checked {
+                ~.#{$class-prefix}form-check-text {
+                    &::after {
+                        right: ($height - $cursor)*0.5;
+                    }
+                }
+            }
+        }
+
+        .#{$class-prefix}form-check-input {
+            margin-right: $width * -1;
+        }
+    }
+}

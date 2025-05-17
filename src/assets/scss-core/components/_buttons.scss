@@ -1,0 +1,274 @@
+@mixin button-variant($color) {
+
+    --#{$var-prefix}btn-color:                 var(--#{$var-prefix}white);
+    --#{$var-prefix}btn-bg:                    var(--#{$var-prefix}#{$color});
+    --#{$var-prefix}btn-border-color:          transparent;
+
+    --#{$var-prefix}btn-hover-color:           var(--#{$var-prefix}white);
+    --#{$var-prefix}btn-hover-bg:              var(--#{$var-prefix}#{$color}-600);
+    --#{$var-prefix}btn-hover-border-color:    var(--#{$var-prefix}btn-border-color);
+
+    --#{$var-prefix}btn-active-color:          var(--#{$var-prefix}white);
+    --#{$var-prefix}btn-active-bg:             var(--#{$var-prefix}#{$color}-700);
+    --#{$var-prefix}btn-active-border-color:   var(--#{$var-prefix}btn-border-color);
+
+    --#{$var-prefix}btn-focus-shadow-rgb:      var(--#{$var-prefix}#{$color}-rgb);
+
+}
+
+@mixin button-outline-variant($color) {
+
+    --#{$var-prefix}btn-color:               var(--#{$var-prefix}#{$color});
+    --#{$var-prefix}btn-bg:                  var(--#{$var-prefix}white);
+    --#{$var-prefix}btn-border-color:        var(--#{$var-prefix}#{$color});
+    --#{$var-prefix}btn-icon-color:          var(--#{$var-prefix}#{$color}-400);
+
+    --#{$var-prefix}btn-hover-color:         var(--#{$var-prefix}#{$color}-600);
+    --#{$var-prefix}btn-hover-bg:            var(--#{$var-prefix}#{$color}-50);
+    --#{$var-prefix}btn-hover-border-color:  var(--#{$var-prefix}#{$color}-600);
+
+    --#{$var-prefix}btn-active-color:        var(--#{$var-prefix}#{$color}-600);
+    --#{$var-prefix}btn-active-bg:           var(--#{$var-prefix}#{$color}-100);
+    --#{$var-prefix}btn-active-border-color: var(--#{$var-prefix}#{$color}-600);
+
+    --#{$var-prefix}btn-focus-shadow-rgb:    var(--#{$var-prefix}#{$color}-rgb);
+
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $font-weight, $min-height, $border-radius) {
+    --#{$var-prefix}btn-padding-y: #{$padding-y};
+    --#{$var-prefix}btn-padding-x: #{$padding-x};
+    --#{$var-prefix}btn-font-size: #{$font-size};
+    --#{$var-prefix}btn-line-height: #{$line-height};
+    --#{$var-prefix}btn-font-weight: #{$font-weight};
+    --#{$var-prefix}btn-size: #{$min-height};
+    --#{$var-prefix}btn-border-radius: #{$border-radius};
+}
+
+%btn {
+
+    --#{$var-prefix}btn-padding-x: #{$btn-padding-x};
+    --#{$var-prefix}btn-padding-y: #{$btn-padding-y};
+    --#{$var-prefix}btn-font-family: #{$font-family-base};
+    --#{$var-prefix}btn-font-size: #{$btn-font-size};
+    --#{$var-prefix}btn-line-height: #{$btn-line-height};
+    --#{$var-prefix}btn-font-weight: #{$btn-font-weight};
+    --#{$var-prefix}btn-color: var(--#{$var-prefix}white);
+    --#{$var-prefix}btn-display: inline-block;
+    --#{$var-prefix}btn-bg: transparent;
+    --#{$var-prefix}btn-border-width: #{$btn-border-width};
+    --#{$var-prefix}btn-border-color: transparent;
+    --#{$var-prefix}btn-border-radius: #{$btn-border-radius};
+    --#{$var-prefix}btn-size: #{$btn-height};
+    //--#{$var-prefix}btn-box-shadow: #{$btn-box-shadow};
+    --#{$var-prefix}btn-disabled-opacity: #{$btn-disabled-opacity};
+    //--#{$var-prefix}btn-focus-box-shadow: 0 0 0 #{$input-btn-focus-width} rgba(var(--#{$var-prefix}btn-focus-shadow-rgb), .5);
+    //--#{$var-prefix}btn-space: #{$btn-space};
+    --#{$var-prefix}btn-icon-color: null;
+    --#{$var-prefix}btn-margin-x:   #{$btn-margin-x};
+    //--#{$var-prefix}icon-btn-margin-x: #{$icon-btn-margin-x};
+    //--#{$var-prefix}icon-btn-size: #{$icon-btn-size};
+
+    display: var(--#{$var-prefix}btn-display);
+    padding: var(--#{$var-prefix}btn-padding-y) var(--#{$var-prefix}btn-padding-x);
+    font-family: var(--#{$var-prefix}body-font-family);
+    font-size: var(--#{$var-prefix}btn-font-size);
+    line-height: var(--#{$var-prefix}btn-line-height);
+    font-weight: var(--#{$var-prefix}btn-font-weight);
+    min-height: var(--#{$var-prefix}btn-size);
+    color: var(--#{$var-prefix}btn-color);
+    text-align: center;
+    //text-decoration: if($link-decoration ==none, null, none);
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--#{$var-prefix}btn-bg);
+    border: var(--#{$var-prefix}btn-border-width) solid var(--#{$var-prefix}btn-border-color);
+    @include border-radius(var(--#{$var-prefix}btn-border-radius));
+    box-sizing: border-box;
+    margin-left: var(--#{$var-prefix}btn-margin-x);
+    min-width: $btn-min-width;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:hover {
+        color: var(--#{$var-prefix}btn-hover-color);
+        background-color: var(--#{$var-prefix}btn-hover-bg);
+        border-color: var(--#{$var-prefix}btn-hover-border-color, transparent);
+        @include transition(background-color .15s ease-in-out);
+    }
+
+    &:active,
+    &.active {
+        color: var(--#{$var-prefix}btn-active-color);
+        background-color: var(--#{$var-prefix}btn-active-bg);
+        border-color: var(--#{$var-prefix}btn-active-border-color, transparent);
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &:disabled,
+    &.disabled,
+    fieldset:disabled & {
+        @include component-disabled();
+        @include box-shadow(none);
+    }
+
+}
+
+%btn-sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-font-weight-sm, $btn-height-sm, $btn-border-radius-sm);
+}
+
+%btn-lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-font-weight-lg, $btn-height-lg, $btn-border-radius-lg);
+}
+
+%btn-xl {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-font-weight-lg, $btn-height-xl, $btn-border-radius-lg);
+}
+
+%btn-icon-only {
+    --#{$var-prefix}btn-padding-x: 0;
+    --#{$var-prefix}btn-padding-y: 0;
+    --#{$var-prefix}btn-size: #{$btn-height};
+    --#{$var-prefix}btn-display: inline-flex;
+    @include box-size(var(--#{$var-prefix}btn-size));
+    align-items: center;
+    justify-content: center;
+}
+
+//%btn-sm {
+//  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-font-weight-sm, $btn-height-sm, $btn-border-radius-sm);
+//}
+
+%btn-connect {
+    --#{$var-prefix}btn-padding-x: #{$btn-padding-x};
+    --#{$var-prefix}btn-padding-y: #{$btn-connect-padding-y};
+    --#{$var-prefix}btn-font-family: #{$font-family-base};
+    --#{$var-prefix}btn-font-size: #{$btn-font-size};
+    --#{$var-prefix}btn-display: inline-flex;
+    --#{$var-prefix}btn-bg: transparent;
+    --#{$var-prefix}btn-border-width: #{$btn-border-width};
+    --#{$var-prefix}btn-border-color: transparent;
+    --#{$var-prefix}btn-line-height: #{$btn-line-height};
+
+    display: var(--#{$var-prefix}btn-display);
+    padding: var(--#{$var-prefix}btn-padding-y) var(--#{$var-prefix}btn-padding-x);
+    font-family: var(--#{$var-prefix}body-font-family);
+    font-size: var(--#{$var-prefix}btn-font-size);
+    line-height: var(--#{$var-prefix}btn-line-height);
+    font-weight: $font-weight-semibold;
+    min-height: var(--#{$var-prefix}btn-size);
+    color: $text-color;
+    align-items: center;
+    cursor: pointer;
+    min-width: 160px;
+    box-sizing: border-box;
+    border: var(--#{$var-prefix}btn-border-width) solid var(--#{$var-prefix}btn-border-color);
+    @include border-radius($btn-radius);
+
+    &:hover {
+        //text-decoration: if($link-hover-decoration ==underline, none, null);
+        //color: var(--#{$var-prefix}btn-hover-color);
+        background-color: var(--#{$var-prefix}primary-50);
+        border-color: var(--#{$var-prefix}primary-150);
+        @include transition(background-color .15s ease-in-out);
+    }
+}
+
+//===== Buttons Class ===================================
+.#{$class-prefix}btn {
+    @extend %btn;
+    .icon-btn + span,
+    span + .icon-btn {
+        margin-left: $btn-margin-icon;
+    }
+}
+
+//.#{$class-prefix}btn-sm {
+//  @extend %btn-sm;
+//}
+
+.#{$class-prefix}btn-icon-only {
+    @extend %btn-icon-only;
+
+    @each $size, $value in $box-sizes {
+        &.#{$class-prefix}btn-#{$size} {
+            --#{$var-prefix}btn-size: var(--#{$var-prefix}size-#{$size});
+        }
+    }
+}
+
+.#{$class-prefix}btn-connect {
+    @extend %btn-connect;
+    margin-left: 1.2rem;
+    &:first-child {
+        margin-left: 0;
+    }
+    .icon-btn + span,
+    span + .icon-btn {
+        margin-left: $btn-margin-icon;
+    }
+}
+
+//----- Buttons size ------------------------------------
+.#{$class-prefix}btn-sm {
+    @extend %btn-sm;
+}
+
+.#{$class-prefix}btn-lg {
+    @extend %btn-lg;
+}
+
+.#{$class-prefix}btn-xl {
+    @extend %btn-xl;
+}
+
+//----- Buttons color -----------------------------------
+@each $color, $value in $theme-colors {
+    .#{$class-prefix}btn-#{$color},
+    .#{$class-prefix}hover-#{$color}:hover {
+        @include button-variant($color);
+        @if $color =="gray" {
+            --#{$var-prefix}btn-bg:         var(--#{$var-prefix}gray-300);
+            --#{$var-prefix}btn-hover-bg:   var(--#{$var-prefix}gray-350);
+            --#{$var-prefix}btn-active-bg:  var(--#{$var-prefix}gray-400);
+        }
+    }
+
+    %btn-outline-#{$color},
+    .#{$class-prefix}btn-outline-#{$color},
+    .#{$class-prefix}hover-outline-#{$color}:hover,
+    .#{$class-prefix}hover-outline-#{$color}:focus {
+        @include button-outline-variant($color);
+        @if $color =="gray" {
+            --#{$var-prefix}btn-icon-color:             var(--#{$var-prefix}gray-700);
+            --#{$var-prefix}btn-color:                  var(--#{$var-prefix}gray-900);
+            --#{$var-prefix}btn-hover-color:            var(--#{$var-prefix}primary);
+            --#{$var-prefix}btn-hover-bg:               var(--#{$var-prefix}primary-50);
+            --#{$var-prefix}btn-border-color:           var(--#{$var-prefix}gray-200);
+            --#{$var-prefix}btn-hover-border-color:     var(--#{$var-prefix}primary-50);
+            --#{$var-prefix}btn-active-border-color:    var(--#{$var-prefix}primary-50);
+            --#{$var-prefix}btn-active-color:           var(--#{$var-prefix}primary);
+            --#{$var-prefix}btn-active-bg:              var(--#{$var-prefix}primary-50);
+        }
+    }
+
+    .#{$class-prefix}btn-text-#{$color} {
+        color: var(--#{$var-prefix}#{$color});
+        background-color: var(--#{$var-prefix}#{$color}-75);
+        &:hover, &:active, &.active {
+            color: $white;
+            background-color: var(--#{$var-prefix}#{$color});
+        }
+    }
+
+    .#{$class-prefix}light-#{$color} {
+        color: var(--#{$var-prefix}#{$color});
+        background-color: var(--#{$var-prefix}#{$color}-75);
+    }
+}

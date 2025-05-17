@@ -1,0 +1,29 @@
+// avatars ******************************************/
+@mixin avatar-variant($color) {
+  --#{$var-prefix}avatar-color:             var(--#{$var-prefix}white); 
+  --#{$var-prefix}avatar-bg:                var(--#{$var-prefix}#{$color});
+  --#{$var-prefix}avatar-border-color:      var(--#{$var-prefix}#{$color});
+}
+
+@mixin avatar-outline-variant($color) {
+
+  --#{$var-prefix}avatar-color:             var(--#{$var-prefix}#{$color}-700); 
+  --#{$var-prefix}avatar-border-color:      var(--#{$var-prefix}#{$color}-400);
+
+
+}
+
+@mixin avatar-light-variant($color) {
+  --#{$var-prefix}avatar-color:             var(--#{$var-prefix}#{$color}-700); 
+  --#{$var-prefix}avatar-bg:                var(--#{$var-prefix}#{$color}-100);
+}
+
+
+@mixin avatar-size($size, $line-height, $avatar-icon-font-size, $border-radius) {
+  --#{$var-prefix}avatar-font-size: #{$font-size};
+  --#{$var-prefix}avatar-line-height: #{$line-height};  
+  --#{$var-prefix}avatar-size: #{$size};
+  --#{$var-prefix}avatar-border-radius: #{$border-radius};
+  --#{$var-prefix}avatar-icon-font-size: #{$avatar-icon-font-size};
+}
+

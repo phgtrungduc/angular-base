@@ -1,0 +1,13 @@
+@mixin box-size($width, $height: $width) {
+    width: $width;
+    @include box-size-auto($width, $height);
+}
+
+@mixin box-size-auto($width, $height: $width) {
+    height: $height;
+    min-width: $width;
+}
+
+
+
+

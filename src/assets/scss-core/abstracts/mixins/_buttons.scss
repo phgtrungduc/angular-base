@@ -1,0 +1,119 @@
+@mixin button-variant($color) {
+
+  --#{$var-prefix}btn-color:                 var(--#{$var-prefix}white); 
+  --#{$var-prefix}btn-bg:                    var(--#{$var-prefix}#{$color});
+  --#{$var-prefix}btn-border-color:          transparent;
+
+  --#{$var-prefix}btn-hover-color:           var(--#{$var-prefix}white);
+  --#{$var-prefix}btn-hover-bg:              var(--#{$var-prefix}#{$color}-600);
+  --#{$var-prefix}btn-hover-border-color:    var(--#{$var-prefix}btn-border-color);
+
+  --#{$var-prefix}btn-active-color:          var(--#{$var-prefix}white); 
+  --#{$var-prefix}btn-active-bg:             var(--#{$var-prefix}#{$color}-700);
+  --#{$var-prefix}btn-active-border-color:   var(--#{$var-prefix}btn-border-color);
+
+  --#{$var-prefix}btn-focus-shadow-rgb:      var(--#{$var-prefix}#{$color}-rgb);
+
+}
+
+@mixin button-other-variant($value) {
+
+  --#{$var-prefix}btn-color:                 var(--#{$var-prefix}white); 
+  --#{$var-prefix}btn-bg:                    #{$value};
+  --#{$var-prefix}btn-border-color:          transparent;
+
+  --#{$var-prefix}btn-hover-color:           var(--#{$var-prefix}white);
+  --#{$var-prefix}btn-hover-bg:              #{shade-color($value, 10%)};
+  --#{$var-prefix}btn-hover-border-color:    var(--#{$var-prefix}btn-border-color);
+
+  --#{$var-prefix}btn-active-color:          var(--#{$var-prefix}white); 
+  --#{$var-prefix}btn-active-bg:             #{shade-color($value, 20%)};
+  --#{$var-prefix}btn-active-border-color:   var(--#{$var-prefix}btn-border-color);
+
+  --#{$var-prefix}btn-focus-shadow-rgb:      #{to-rgb($value)};
+
+}
+
+@mixin button-outline-variant($color) {
+    
+    --#{$var-prefix}btn-color:               var(--#{$var-prefix}#{$color}); 
+    --#{$var-prefix}btn-bg:                  var(--#{$var-prefix}white);
+    --#{$var-prefix}btn-border-color:        var(--#{$var-prefix}#{$color});
+    --#{$var-prefix}btn-icon-color:          var(--#{$var-prefix}#{$color}-400);
+  
+    --#{$var-prefix}btn-hover-color:         var(--#{$var-prefix}#{$color}-600);
+    --#{$var-prefix}btn-hover-bg:            var(--#{$var-prefix}#{$color}-50);
+    --#{$var-prefix}btn-hover-border-color:  var(--#{$var-prefix}#{$color}-600);
+  
+    --#{$var-prefix}btn-active-color:        var(--#{$var-prefix}#{$color}-600); 
+    --#{$var-prefix}btn-active-bg:           var(--#{$var-prefix}#{$color}-100);
+    --#{$var-prefix}btn-active-border-color: var(--#{$var-prefix}#{$color}-600);
+    
+    --#{$var-prefix}btn-focus-shadow-rgb:    var(--#{$var-prefix}#{$color}-rgb);
+
+}
+
+@mixin button-light-variant($color) {
+
+    --#{$var-prefix}btn-color:               var(--#{$var-prefix}#{$color}); 
+    --#{$var-prefix}btn-bg:                  var(--#{$var-prefix}#{$color}-50);
+    --#{$var-prefix}btn-border-color:        transparent;
+
+    --#{$var-prefix}btn-hover-color:         var(--#{$var-prefix}#{$color}-600);
+    --#{$var-prefix}btn-hover-bg:            var(--#{$var-prefix}#{$color}-100);
+    --#{$var-prefix}btn-hover-border-color:  transparent;
+
+    --#{$var-prefix}btn-active-color:        var(--#{$var-prefix}#{$color}-600); 
+    --#{$var-prefix}btn-active-bg:           var(--#{$var-prefix}#{$color}-150);
+    --#{$var-prefix}btn-active-border-color: transparent;  
+      
+    --#{$var-prefix}btn-focus-shadow-rgb:    var(--#{$var-prefix}#{$color}-rgb);
+
+}
+
+@mixin button-text-variant($color) {
+
+    --#{$var-prefix}btn-color:               var(--#{$var-prefix}#{$color}-700); 
+    --#{$var-prefix}btn-bg:                  transparent;
+    --#{$var-prefix}btn-border-color:        transparent;
+
+    --#{$var-prefix}btn-hover-color:         var(--#{$var-prefix}#{$color}-750);
+    --#{$var-prefix}btn-hover-bg:            var(--#{$var-prefix}#{$color}-50);
+    --#{$var-prefix}btn-hover-border-color:  transparent;
+
+    --#{$var-prefix}btn-active-color:        var(--#{$var-prefix}#{$color}-750); 
+    --#{$var-prefix}btn-active-bg:           var(--#{$var-prefix}#{$color}-100);
+    --#{$var-prefix}btn-active-border-color: transparent;
+    
+    --#{$var-prefix}btn-focus-shadow-rgb:    var(--#{$var-prefix}#{$color}-rgb);
+
+}
+
+@mixin button-ghost-variant($color) {
+
+    --#{$var-prefix}btn-color:                var(--#{$var-prefix}#{$color}); 
+    --#{$var-prefix}btn-bg:                   transparent;
+    --#{$var-prefix}btn-border-color:         var(--#{$var-prefix}#{$color});
+  
+    --#{$var-prefix}btn-hover-color:          var(--#{$var-prefix}#{$color}-600);
+    --#{$var-prefix}btn-hover-bg:             #{rgba(var(--#{$var-prefix}#{$color}-rgb), .2)};
+    --#{$var-prefix}btn-hover-border-color:   var(--#{$var-prefix}#{$color}-600);
+  
+    --#{$var-prefix}btn-active-color:         var(--#{$var-prefix}#{$color}); 
+    --#{$var-prefix}btn-active-bg:            #{rgba(var(--#{$var-prefix}#{$color}-rgb), .3)};
+    --#{$var-prefix}btn-active-border-color:  var(--#{$var-prefix}#{$color}-700);
+    
+    --#{$var-prefix}btn-focus-shadow-rgb:     var(--#{$var-prefix}#{$color}-rgb);
+
+}
+
+
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $font-weight, $min-height, $border-radius) {
+  --#{$var-prefix}btn-padding-y: #{$padding-y};
+  --#{$var-prefix}btn-padding-x: #{$padding-x};
+  --#{$var-prefix}btn-font-size: #{$font-size};
+  --#{$var-prefix}btn-line-height: #{$line-height}; 
+  --#{$var-prefix}btn-font-weight: #{$font-weight}; 
+  --#{$var-prefix}btn-size: #{$min-height};
+  --#{$var-prefix}btn-border-radius: #{$border-radius};
+}

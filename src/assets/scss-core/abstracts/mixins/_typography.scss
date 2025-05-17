@@ -1,0 +1,26 @@
+@mixin typo-size($type, $types) {
+    font-size: map-get(map-get($types, '#{$type}'), font-size);
+    line-height: map-get(map-get($types, '#{$type}'), line-height);
+}
+
+@mixin typo-weight($type, $types) {
+    font-weight: map-get(map-get($types, '#{$type}'), font-weight);
+}
+
+@mixin line-clamp($line) {
+    @if ($line == 1) {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    @else if ($line > 1) {
+        display: -webkit-box;
+        -webkit-line-clamp: $line;
+        box-orient: vertical;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+}

@@ -1,0 +1,9 @@
+//===== toasts ========================================
+@mixin toast-variant($color) {
+  --#{$var-prefix}toast-color:             var(--#{$var-prefix}white); 
+  --#{$var-prefix}toast-bg:                var(--#{$var-prefix}#{$color});
+  --#{$var-prefix}toast-border-color:      var(--#{$var-prefix}#{$color});
+  --#{$var-prefix}toast-close-hover-bg:    var(--#{$var-prefix}#{$color}-600);
+  --#{$var-prefix}toast-close-active-bg:   var(--#{$var-prefix}#{$color}-700);
+  --#{$var-prefix}toast-icon-color:        var(--#{$var-prefix}white); 
+}

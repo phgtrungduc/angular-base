@@ -1,0 +1,30 @@
+// badges ******************************************/
+@mixin badge-variant($color) {
+  --#{$var-prefix}badge-color:             var(--#{$var-prefix}white); 
+  --#{$var-prefix}badge-bg:                var(--#{$var-prefix}#{$color});
+  --#{$var-prefix}badge-border-color:      var(--#{$var-prefix}white);
+}
+
+@mixin badge-outline-variant($color) {
+
+  --#{$var-prefix}badge-color:             var(--#{$var-prefix}#{$color}-700); 
+  --#{$var-prefix}badge-border-color:      var(--#{$var-prefix}#{$color}-400);
+
+
+}
+
+@mixin badge-light-variant($color) {
+  --#{$var-prefix}badge-color:             var(--#{$var-prefix}#{$color}-700); 
+  --#{$var-prefix}badge-bg:                var(--#{$var-prefix}#{$color}-100);
+  --#{$var-prefix}badge-border-color:      var(--#{$var-prefix}white);
+}
+
+
+@mixin badge-size($padding-y, $padding-x, $font-size, $line-height, $min-height) {
+  --#{$var-prefix}badge-padding-y: #{$padding-y};
+  --#{$var-prefix}badge-padding-x: #{$padding-x};
+  --#{$var-prefix}badge-font-size: #{$font-size};
+  --#{$var-prefix}badge-line-height: #{$line-height};  
+  --#{$var-prefix}badge-height: #{$min-height};
+}
+

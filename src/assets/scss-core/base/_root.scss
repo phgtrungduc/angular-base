@@ -1,0 +1,28 @@
+:root {
+  @each $color, $value in color-multi-map($theme-colors) {
+    --#{$var-prefix}#{$color}: #{$value};
+  }
+  @each $color, $value in color-map("link", $link-color) {
+    --#{$var-prefix}#{$color}: #{$value};
+  }
+  @each $size, $value in $radius-sizes {
+    --#{$var-prefix}radius-#{$size}: #{$value};
+  }
+  @each $spacer, $value in $spacers {
+    --#{$var-prefix}spacer-#{$spacer}: #{$value};
+  }
+
+  --#{$var-prefix}white: #{$white};
+  --#{$var-prefix}black: #{$black};
+
+  @each $size, $value in $box-sizes {
+    --#{$var-prefix}size-#{$size}: #{$value};
+  }
+
+  --#{$var-prefix}body-font-family: #{$font-family-base};
+  --#{$var-prefix}body-font-size: #{$font-size-base};
+  --#{$var-prefix}body-font-weight: #{$font-weight-normal};
+  --#{$var-prefix}body-line-height: #{$line-height-base};
+  --#{$var-prefix}body-color: #{$body-color};
+  --#{$var-prefix}body-bg: #{$body-bg};
+}

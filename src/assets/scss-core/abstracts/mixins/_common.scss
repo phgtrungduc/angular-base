@@ -1,0 +1,223 @@
+%flex {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex() {
+    @extend %flex;
+}
+
+@mixin fal {
+    font-family: $font-awesome-pro;
+    font-weight: 300;
+}
+
+@mixin far {
+    font-family: $font-awesome-pro;
+    font-weight: 400;
+}
+
+@mixin fas {
+    font-family: $font-awesome-pro;
+    font-weight: 900;
+}
+
+//===== Type ========================================
+%fal {
+    @include fal;
+}
+
+%far {
+    @include far;
+}
+
+%fas {
+    @include fas;
+}
+
+@mixin unify-parent($child) {
+    @at-root #{selector-unify(&, $child)} {
+      @content;
+    }
+  }
+
+//===== Border radius ===============================
+@mixin border-radius($radius: $border-radius) {
+      border-radius: $radius;
+  }
+
+@mixin border-top-radius($radius: $border-radius) {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-right-radius($radius: $border-radius) {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius: $border-radius) {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin border-left-radius($radius: $border-radius) {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+//===== Reset =======================================
+@mixin button-reset() {
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none  !important;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin input-reset() {
+	border: 0;
+	background-color: transparent;
+    outline: none !important;
+	box-shadow: none;
+    border-radius: 0;
+}
+
+@mixin display-mobile($name) {
+    @if $name == "show" {
+        @include media-breakpoint-up(md){
+            display: none !important;
+        }
+    }@else {
+        @include media-breakpoint-down(md){
+            display: none !important;
+        }
+    }
+}
+//===== Position =====================================
+// @include position(fixed, 0, n, n, 0);
+// -> position: fixed;
+//    top: 0;
+//    left: 0;
+
+@mixin position($def: relative, $t: n, $r: n, $b: n, $l: n){
+    @if $def == absolute {
+        position: absolute;
+    } @else if $def == fixed {
+        position: fixed;
+    } @else {
+        position: relative;
+    }
+    @if $t != n { top: $t; }
+    @if $r != n { right: $r };
+    @if $b != n { bottom: $b };
+    @if $l != n { left: $l };
+}
+
+@mixin opacity($value) {
+    $IEValue: $value*100;
+    opacity: $value;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+    filter: alpha(opacity=$IEValue);
+}
+
+@mixin box-shadow($top: 0, $left: 3px, $blur: 5px, $alpha: 0.5, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow: inset $top $left $blur rgba(0, 0, 0, $alpha);
+        -moz-box-shadow: inset $top $left $blur rgba(0, 0, 0, $alpha);
+        box-shadow: inset $top $left $blur rgba(0, 0, 0, $alpha);
+    }
+
+    @else {
+        -webkit-box-shadow: $top $left $blur rgba(0, 0, 0, $alpha);
+        -moz-box-shadow: $top $left $blur rgba(0, 0, 0, $alpha);
+        box-shadow: $top $left $blur rgba(0, 0, 0, $alpha);
+    }
+}
+
+@mixin moving($element: 100%, $time: 200ms, $ease: ease-out) {
+    -webkit-transition: $element $time $ease;
+    -moz-transition: $element $time $ease;
+    -o-transition: $element $time $ease;
+    -ms-transition: $element $time $ease;
+    transition: $element $time $ease;
+}
+
+//===== Transitions ===================================
+@mixin transition($prop: all, $time: 200ms, $ease: linear) {
+    -webkit-transition: $prop $time $ease;
+    -moz-transition: $prop $time $ease;
+    -o-transition: $prop $time $ease;
+    -ms-transition: $prop $time $ease;
+    transition: $prop $time $ease;
+  }
+
+@mixin cell-width($width: 100px) {
+    flex: 0 0 $width;
+    max-width: $width;
+    width: $width;
+}
+
+// ===== form ======================================
+
+@mixin placeholder($color: $input-placeholder-color) {
+    &::placeholder {
+        color: $color;
+        opacity: 1;
+    }
+}
+
+@mixin component-disabled($opacity: $component-disabled) {
+    pointer-events: none;
+    @include opacity($opacity);
+}
+
+@mixin scroll-space($space) {
+    margin-right: calc((#{$space} - 1px)* -1);
+    padding-right: calc(#{$space} - 1px);
+}
+
+@mixin text-wrap-row($row) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $row;
+    -webkit-box-orient: vertical;
+}
+
+@mixin text-wrap() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// Set width, height of the box
+@mixin box($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin item-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Position absolute
+@mixin position-absolute($top: null, $bottom: null, $left: null, $right: null) {
+    position: absolute;
+    left: $left;
+    top: $top;
+    bottom: $bottom;
+    right: $right;
+}
+

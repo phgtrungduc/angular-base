@@ -1,0 +1,51 @@
+//
+// Login Page
+//
+.qr-login-wrapper {
+  background-image: url(https://cdn-app.kiotviet.vn/retailler/Content/img/kiotviet-login-bg.jpg), url(https://cdn-app.kiotviet.vn/retailler/Content/img/kiotviet-login-optimized-bg.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #151c24;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  @include box(100%);
+}
+
+.qr-login {
+  width: 44rem;
+  overflow: hidden;
+  background-color: $white;
+  transform: translate(-50%, -50%);
+  @include position-absolute($top: 50%, $left: 50%);
+  @include border-radius($login-radius);
+
+  &--header {
+    padding: $login-padding-y 0;
+    justify-content: center;
+    align-items: center;
+    @include flex;
+    img {
+      height: 36px;
+    }
+  }
+
+  &--content {
+    padding: 0 $login-padding-x;
+  }
+
+  &--footer {
+    .#{$class-prefix}btn {
+      --#{$var-prefix}btn-margin-x:       0;
+      --#{$var-prefix}btn-border-radius:  0;
+      --#{$var-prefix}btn-padding-y:      1.6rem;
+      --#{$var-prefix}btn-display:        inline-flex;
+      --#{$var-prefix}btn-font-size:      1.6rem;
+      --#{$var-prefix}btn-line-height:    24px;
+
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="qr-login-wrapper">
+  <div class="qr-login">
+    <div class="qr-login--header">
+      <img src="https://logo.kiotviet.vn/KiotViet-Logo-Horizontal.svg" alt="logo">
+    </div>
+    <div class="d-flex flex-column qr-login--content">
+      <div class="qr-form-row">
+        <input placeholder="Nhập tên đăng nhập" class="qr-form-control" [(ngModel)]="username"/>
+      </div>
+      <div class="qr-form-row">
+        <input type="password" placeholder="Nhập mật khẩu" class="qr-form-control" [(ngModel)]="password"/>
+      </div>
+    </div>
+    <div class="qr-login--footer mt-24">
+      <span class="qr-btn qr-btn-primary" id='btn_save' (click)="login()">Đăng nhập</span>
+<!--      <span class="qr-btn qr-btn-success" id='btn_cancel' (click)="register()">Đăng kí</span>-->
+    </div>
+  </div>
+</div>

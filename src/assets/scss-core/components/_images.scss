@@ -1,0 +1,12 @@
+//
+// Images Component
+//
+%image {
+    overflow: hidden;
+    @include border-radius($image-border-radius);
+    @include box($image-size-m);
+}
+
+.#{$class-prefix}image {
+    @extend %image;
+}

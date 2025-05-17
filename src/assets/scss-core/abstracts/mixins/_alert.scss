@@ -1,0 +1,49 @@
+//===== alerts ========================================
+// @mixin alert-variant($color) {
+//   --#{$var-prefix}alert-color:             var(--#{$var-prefix}white); 
+//   --#{$var-prefix}alert-bg:                var(--#{$var-prefix}#{$color});
+//   --#{$var-prefix}alert-border-color:      var(--#{$var-prefix}#{$color});
+//   --#{$var-prefix}alert-close-hover-bg:    var(--#{$var-prefix}#{$color}-600);
+//   --#{$var-prefix}alert-close-active-bg:   var(--#{$var-prefix}#{$color}-700);
+//   --#{$var-prefix}alert-icon-color:        var(--#{$var-prefix}white); 
+// }
+
+@mixin alert-variant($color) {
+  --#{$var-prefix}alert-color:             #{css-var(white)};  
+  --#{$var-prefix}alert-bg:                #{css-var($color)};
+  --#{$var-prefix}alert-border-color:      #{css-var($color)};
+  --#{$var-prefix}alert-close-hover-bg:    #{css-var($color, 600)};
+  --#{$var-prefix}alert-close-active-bg:   #{css-var($color, 700)};
+  --#{$var-prefix}alert-icon-color:        #{css-var(white)}; 
+}
+
+
+@mixin alert-outline-variant($color) {
+
+  --#{$var-prefix}alert-color:             var(--#{$var-prefix}#{$color}-850); 
+  --#{$var-prefix}alert-border-color:      var(--#{$var-prefix}#{$color}-400);
+  --#{$var-prefix}alert-close-hover-bg:    var(--#{$var-prefix}#{$color}-100);
+  --#{$var-prefix}alert-close-active-bg:   var(--#{$var-prefix}#{$color}-150);
+  --#{$var-prefix}alert-icon-color:        var(--#{$var-prefix}#{$color});
+
+
+}
+
+@mixin alert-light-variant($color) {
+  --#{$var-prefix}alert-color:             var(--#{$var-prefix}#{$color}-850); 
+  --#{$var-prefix}alert-bg:                var(--#{$var-prefix}#{$color}-50);
+  --#{$var-prefix}alert-close-hover-bg:    var(--#{$var-prefix}#{$color}-200);
+  --#{$var-prefix}alert-close-active-bg:   var(--#{$var-prefix}#{$color}-250);
+  --#{$var-prefix}alert-icon-color:        var(--#{$var-prefix}#{$color});
+}
+
+
+@mixin alert-size($padding-y, $padding-x, $font-size, $line-height, $min-height, $border-radius) {
+  --#{$var-prefix}alert-padding-y: #{$padding-y};
+  --#{$var-prefix}alert-padding-x: #{$padding-x};
+  --#{$var-prefix}alert-font-size: #{$font-size};
+  --#{$var-prefix}alert-line-height: #{$line-height};  
+  --#{$var-prefix}alert-height: #{$min-height};
+  --#{$var-prefix}alert-border-radius: #{$border-radius};
+}
+

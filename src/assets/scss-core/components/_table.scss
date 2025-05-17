@@ -1,0 +1,176 @@
+//
+// Table Component
+//
+
+// ---------------------- Column width -------------------------------
+.kendo-grid, table {
+  .cell-auto {
+    min-width: 165px;
+    flex: 1;
+  }
+  .cell-stt {
+    @include cell-width($cell-stt);
+  }
+  .cell-phone {
+    @include cell-width($cell-phone);
+  }
+  .cell-status-action {
+    @include cell-width($cell-status-action);
+  }
+  .cell-datetime {
+    @include cell-width($cell-datetime);
+  }
+}
+
+// ---------------------- Class Grid -------------------------------
+.#{$class-prefix}grid {
+  --kendo-font-size:          #{$font-size-base};
+
+  overflow: hidden;
+  color: $text-color;
+  border: none;
+
+  .k-hierarchy-cell {
+    display: none;
+  }
+
+  table {
+    table-layout: fixed;
+    max-width: none;
+    width: auto !important;
+    min-width: 100%;
+  }
+
+  tr {
+
+    &.k-alt {
+      background-color: var(--#{$var-prefix}gray-25);
+    }
+
+    &.k-state-selected {
+      > td {
+        background-color: transparent;
+      }
+    }
+  }
+
+  a {
+    color: $link-color;
+  }
+
+  th, .k-header {
+    padding-block: $table-td-padding-y;
+    padding-inline: $table-td-padding-x;
+  }
+
+  td, .k-table-td {
+    padding-block: $table-td-padding-y;
+    padding-inline: $table-td-padding-x;
+  }
+
+  .k-header, td {
+    border: none;
+  }
+
+  .k-grid-header, .k-table-thead, .k-table-header, .k-table-group-sticky-header {
+    background-color: var(--#{$var-prefix}primary-50);
+    border: 1px solid $line-border;
+    border-bottom-color: var(--#{$var-prefix}primary-100);
+    font-weight: $table-header-font-weight;
+    @include border-top-radius($table-border-radius);
+
+    .k-grid-header-wrap {
+      border: none;
+    }
+  }
+
+  .k-grid-content {
+    border: 1px solid $line-border;
+    border-top: none;
+    overflow-y: auto;
+    @include border-bottom-radius($table-border-radius);
+  }
+}
+
+// --------- kendo Page ----------
+.k-grid-pager {
+  border: none;
+  background-color: $white;
+  &.k-pager-md {
+    padding: 1.8rem 0;
+  }
+  .k-pager-info {
+    justify-content: flex-start;
+    order: unset;
+    margin-left: 0;
+    flex: unset;
+    color: var(--#{$var-prefix}gray-700);
+    font-size: 1.2rem;
+    line-height: 16px;
+  }
+  .k-pager-first, .k-pager-last {
+    display: none;
+  }
+
+  .k-icon-wrapper-host {
+    display: none;
+  }
+
+  .k-button {
+    font-size: 1.6rem;
+    border: none !important;
+    @include far;
+    @include box(24px);
+    @include border-radius(4px);
+    &:before {
+      opacity: 1;
+      background-color: transparent;
+      position: static;
+      @include far;
+    }
+    &:hover {
+      background-color: $primary !important;
+      color: $white;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  kendo-pager-prev-buttons {
+    .k-button {
+      &:before {
+        content: '\f104';
+      }
+    }
+  }
+
+  kendo-pager-next-buttons {
+    .k-button {
+      &:before {
+        content: '\f105';
+      }
+    }
+  }
+}
+
+.k-pager-numbers {
+  --kendo-font-family:    #{$font-family-base};
+  li {
+    margin-left: .6rem;
+  }
+
+  .k-link, .k-button {
+    min-width: $size-sm;
+    height: $size-sm;
+    color: $text-color;
+    @include border-radius(4px);
+    @include transition();
+
+    &.k-state-selected, &:hover {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+// /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@progress/kendo-theme-default/dist/all.css";
+@import "assets/font/inter/font-inter.css";
+
+// =================== Core ========================
+@import 'assets/scss-core/abstracts/functions';
+@import 'assets/scss-core/abstracts/variables';
+@import 'assets/scss-core/abstracts/mixins';
+
+
+// =================== Base ========================
+@import "assets/scss-core/base/root";
+@import "assets/scss-core/base/reboot";
+
+// ================= Component =====================
+@import "assets/scss-core/components/form/form-control";
+@import "assets/scss-core/components/buttons";
+@import "assets/scss-core/components/dropdown";
+@import "assets/scss-core/components/images";
+@import "assets/scss-core/components/table";
+@import "assets/scss-core/components/popover";
+
+// ================== Layout ======================
+@import "assets/scss-core/layout/body";
+
+// =================== Pages ======================
+@import "assets/scss-core/pages/login";

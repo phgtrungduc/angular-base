@@ -1,0 +1,323 @@
+$var-prefix: qr-;
+$class-prefix: qr-;
+//----- Color themes ------------------------------------
+$black:                 #000000;
+$white:                 #fff;
+$blue:                  #0070F4;
+$accentblue:            #3AE3FF;
+$navy:                  #002957;
+$indigo:                #6610f2;
+$purple:                #6f42c1;
+$pink:                  #EF06BC;
+$red:                   #FF0000;
+$orange:                #FF8800;
+$yellow:                #ffc107;
+$green:                 #00B63E;
+$accentgreen:           #00B63E;
+$teal:                  #20c997;
+$cyan:                  #28c9e6;
+$gray:                  #677484;
+
+$primary:               $blue;
+$secondary:             $gray;
+$default:               $gray;
+$success:               $green;
+$info:                  $blue;
+$warning:               $orange;
+$danger:                $red;
+$promotion:             $pink;
+
+$theme-colors: (
+  "primary":            $primary,
+  "secondary":          $secondary,
+  "success":            $success,
+  "info":               $info,
+  "warning":            $warning,
+  "danger":             $danger,
+  "promotion":          $promotion,
+  "default":            $default,
+  "gray":               $gray
+);
+
+//----- Color common ------------------------------------
+$color-white:           var(--#{$var-prefix}white);
+$color-black:           var(--#{$var-prefix}black);
+
+$text-color:            var(--#{$var-prefix}gray-900);
+$body-color:            $text-color;
+$secondary-color:       var(--#{$var-prefix}gray-600);
+$hint-color:            var(--#{$var-prefix}gray-400);
+$disabled-color:        var(--#{$var-prefix}gray-400);
+$body-bg:               var(--#{$var-prefix}white);
+$icon-action-color:     var(--#{$var-prefix}gray-800);
+$icon-mask-color:       var(--#{$var-prefix}gray-600);
+$link-color:            $primary;
+$line-border:           var(--#{$var-prefix}gray-100);
+
+//----- Font common ------------------------------------
+$font-family-base:                          'Inter';
+$font-awesome-pro:                          'Font Awesome 6 Pro';
+$font-size-base:                            1.4rem;
+$font-h2:                                   2rem;
+$font-h3:                                   1.8rem;
+$font-h4:                                   1.6rem;
+$font-h5:                                   1.4rem;
+$font-h6:                                   1.2rem;
+
+$list-width:                                40, 50, 100, 120, 160, 166, 170, 180, 200, 220, 230, 240, 255, 264, 266, 270, 300, 340, 360, 407, 416;
+$list-margin-padding:                       4, 6, 8, 10, 12, 16, 18, 20, 24, 30, 32, 44;
+$form-labels-width:                         (60, 70, 80, 90, 95, 100, 110, 120, 140, 150, 250, 270);
+
+$font-weight-light:                         300;
+$font-weight-normal:                        400;
+$font-weight-medium:                        500;
+$font-weight-semibold:                      600;
+$font-weight-bold:                          700;
+
+$line-height:                               20px;
+$line-height-base:                          $line-height;
+$border-width:                              .1rem;
+$radius-circle:                             999px;
+$component-disabled:                        .4;
+$btn-border-radius:                         var(--#{$var-prefix}radius-md);
+$btn-border-radius-sm:                      var(--#{$var-prefix}radius-sm);
+$btn-border-radius-lg:                      var(--#{$var-prefix}radius-lg);
+
+$scrollbar:                                 4px;
+$background-scroll:                         $line-border;
+$scrollbar-radius:                          999px;
+
+//----- Size ------------------------------------
+$size-xs:                                   1.6rem;
+$size-sm:                                   2.4rem;
+$size-md:                                   3.6rem;
+$size-lg:                                   4.0rem;
+$size-xl:                                   5.2rem;
+$box-sizes: (
+    "xs":                                   $size-xs,
+    "sm":                                   $size-sm,
+    "md":                                   $size-md,
+    "lg":                                   $size-lg,
+    "xl":                                   $size-xl,
+);
+
+//----- Radius ------------------------------------------------
+$border-radius-sm:                          .6rem;      // var(--#{$var-prefix}radius-sm);
+$border-radius-md:                          .8rem;
+$border-radius-lg:                          1rem;
+$border-radius-xl:                          1.6rem;
+$border-radius-circle:                      9999rem;
+
+$radius-sizes: (
+    "none":                                 0,
+    "sm":                                   $border-radius-sm,
+    "md":                                   $border-radius-md,
+    "lg":                                   $border-radius-lg,
+    "xl":                                   $border-radius-xl,
+    "circle":                               $border-radius-circle,
+);
+
+//
+// Table Component
+//
+$cell-checkbox:                             45px;
+$cell-stt:                                  50px;
+$cell-phone:                                120px;
+$cell-status-action:                        150px;
+$cell-datetime:                             170px;
+
+//
+// Kendo Grid Component
+//
+$table-border-radius:                       8px;
+$table-header-font-weight:                  $font-weight-semibold;
+$table-td-padding-y:                        1rem;
+$table-td-padding-x:                        1.6rem;
+
+//
+// Form Input
+//
+$form-check-input-color:                    var(--#{$var-prefix}gray-600);
+$form-check-icon-font-size:                 1.8rem;
+$form-check-input-checked-color:            $primary;
+$form-check-margin-bottom:                  1.2rem;
+
+//
+// Form Control
+//
+$input-padding-x:                           1.8rem;
+$input-padding-y:                           .85rem;
+
+$input-padding-x-lg:                        1.2rem;
+$input-padding-y-lg:                        .6rem;
+
+$input-font-size:                           $font-size-base;
+$input-color:                               $text-color;
+$input-line-height:                         $line-height-base;
+$input-border-width:                        1px;
+$input-border-color:                        var(--#{$var-prefix}gray-200);
+$input-border-radius:                       8px;
+$input-focus-box-shadow-inset-property:     none;
+$input-focus-box-shadow-outset-property:    none;
+$input-border-focus-color:                  $line-border;
+$input-focus-box-shadow-outset-opacity:     .35;
+$input-focus-box-shadow-outset-color:       var(--#{$var-prefix}primary-rgb);
+$input-search-icon-font-size:               1.6rem;
+$input-border-color-focus:                  $primary;
+
+$input-height-sm:                           var(--#{$var-prefix}size-sm);
+$input-height:                              var(--#{$var-prefix}size-md);
+$input-height-lg:                           var(--#{$var-prefix}size-lg);
+
+$form-row-margin-bottom:                    1rem;
+
+// textarea
+$textarea-border-radius:                    5px;
+$textarea-height:                           76px;
+$textarea-color:                            $text-color;
+$textarea-padding-x:                        1.2rem;
+$textarea-padding-y:                        .6rem;
+
+//
+// Button Component
+//
+$btn-radius:                                var(--#{$var-prefix}radius-md);
+$btn-border-radius-lg:                      var(--#{$var-prefix}radius-lg);
+$btn-border-radius-sm:                      var(--#{$var-prefix}radius-sm);
+$btn-height:                                $size-md;
+$btn-height-sm:                             $size-sm;
+$btn-height-lg:                             $size-lg;
+$btn-height-xl:                             $size-xl;
+
+$btn-font-size:                             $font-size-base;
+$btn-font-size-lg:                          $font-size-base;
+$btn-font-size-sm:                          1.2rem;
+$btn-border-width:                          $border-width;
+$btn-min-width:                             80px;
+
+$btn-line-height:                           20px;
+$btn-line-height-lg:                        24px;
+$btn-line-height-sm:                        16px;
+$btn-disabled-opacity:                      .4;
+
+$btn-padding-x:                             1.6rem;
+$btn-padding-y:                             .4rem;
+$btn-padding-y-lg:                          .8rem;
+$btn-padding-x-lg:                          1.6rem;
+$btn-padding-y-sm:                          .2rem;
+$btn-padding-x-sm:                          .8rem;
+$btn-connect-padding-y:                     .9rem;
+$btn-margin-icon:                           1.2rem;
+$btn-margin-x:                              1rem;
+
+$btn-font-weight:                           $font-weight-semibold;
+$btn-font-weight-lg:                        $font-weight-semibold;
+$btn-font-weight-sm:                        $font-weight-normal;
+
+//
+// Images Component
+//
+$image-border-radius:                       8px;
+$image-size-m:                              44px;
+
+//
+// Dropdown Component
+//
+$dropdown-popup-border-width:               0;
+$dropdown-popup-border-color:               transparent;
+$dropdown-popup-border-radius:              12px;
+$dropdown-popup-box-shadow:                 0px 2px 10px rgba(0, 0, 0, 0.12);
+$dropdown-popup-font-size:                  $font-size-base;
+$dropdown-popup-line-height:                $line-height-base;
+$dropdown-popup-color:                      $text-color;
+
+$dropdown-padding-x:                        1.2rem;
+$dropdown-padding-y:                        1rem;
+$dropdown-color-text:                       $text-color;
+$dropdown-font-size:                        $font-size-base;
+$dropdown-icon-size:                        1.6rem;
+$dropdown-border-width:                     1px;
+$dropdown-border-color:                     $line-border;
+$dropdown-border-radius:                    8px;
+$dropdown-kendo-icon-size:                  $size-xs;
+$dropdown-kendo-padding-y:                  .5rem;
+$dropdown-kendo-padding-x:                  1.2rem;
+$dropdown-kendo-icon-color:                 var(--#{$var-prefix}gray-600);
+
+$dropdown-padding-x-lg:                     1.2rem;
+$dropdown-padding-y-lg:                     .9rem;
+
+//
+// Popover Component
+//
+$popover-zindex:                            1070;
+$popover-max-width:                         250px;
+$popover-popup-font-size:                   $font-size-base;
+$popover-bg:                                $white;
+$popover-border-width:                      0;
+$popover-border-color:                      transparent;
+$popover-popup-border-radius:               6px;
+$popover-box-shadow:                        0px 24px 24px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.16);
+$popover-arrow-width:                       10px;
+$popover-arrow-height:                      5px;
+$popover-body-padding-x:                    1rem;
+$popover-body-padding-y:                    1rem;
+$popover-body-color:                        $text-color;
+
+$popover-border-radius:                     8px;
+$popover-padding-x:                         1.2rem;
+$popover-padding-y:                         .5rem;
+
+$popover-dropdown-padding-y:                .5rem;
+$popover-dropdown-padding-x:                1.6rem;
+
+//
+// Login Page
+//
+$login-radius:                              16px;
+$login-padding-x:                           2.4rem;
+$login-padding-y:                           2.4rem;
+
+//----- Space ------------------------------------------------
+$spacer: .4rem;
+$spacer-xs: $spacer * 0.5; //0.2rem
+$spacer-sm: $spacer; //0.4rem
+$spacer-md: $spacer * 2; //0.8rem
+$spacer-lg: $spacer * 4; //1.6rem
+$spacer-xl: $spacer * 6; //2.4rem
+$spacer-xxl: $spacer * 12; //4.8rem
+
+$spacers: (
+  "none": 0,
+  "xs":   $spacer-xs,
+  "sm":   $spacer-sm,
+  "md":   $spacer-md,
+  "lg":   $spacer-lg,
+  "xl":   $spacer-xl,
+  "xxl":  $spacer-xxl
+);
+
+//
+// Grid breakpoints
+//
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 992px,
+  lg: 1281px,
+  ipad: 1025px,
+  xl: 1286px,
+  xxl: 1601px,
+  xxxl: 1910px
+);
+
+//----- Order Block ------------------------------------------------
+$order-block-bg:            $white;
+$order-block-radius:        16px;
+$order-block-padding-x:     2rem;
+$order-block-padding-y:     1.8rem;
+$order-block-margin-y:      1.6rem;
+
+//----- Order Header ------------------------------------------------
+$order-header-padding-x:    1rem;
+$order-header-padding-y:    1.8rem;
