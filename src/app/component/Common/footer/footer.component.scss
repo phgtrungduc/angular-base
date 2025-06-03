@@ -1,0 +1,77 @@
+// Biến màu
+$color-bg: #1c1c1c;
+$color-bg-dark: #111;
+$color-white: #ffffff;
+$color-gray: #ccc;
+$color-gray-light: #aaa;
+$color-accent: #f26b38;
+
+.site-footer {
+  background-color: $color-bg;
+  color: $color-white;
+  font-size: 14px;
+
+  .footer-top {
+    padding: 40px 0;
+    border-bottom: 1px solid darken($color-bg, 10%);
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+
+      .footer-column {
+        h4 {
+          margin-bottom: 15px;
+          font-size: 16px;
+          color: lighten($color-white, 10%);
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            margin-bottom: 10px;
+
+            a {
+              color: $color-gray;
+              text-decoration: none;
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: $color-accent;
+              }
+            }
+          }
+        }
+      }
+
+      .footer-logo {
+        height: 40px;
+        margin-bottom: 20px;
+      }
+
+      .social-icons {
+        a {
+          img {
+            width: 24px;
+            margin-right: 10px;
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    background-color: $color-bg-dark;
+    padding: 20px 0;
+    text-align: center;
+
+    p {
+      margin: 5px 0;
+      color: $color-gray-light;
+    }
+  }
+}

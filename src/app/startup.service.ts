@@ -13,7 +13,9 @@ export class StartupService {
     ServiceLocator.injector = injector;
   }
   public async init(): Promise<void> {
-    this.initBearerToken();
+    // this.initBearerToken();
+    console.log("Init app success");
+    
   }
 
   public initBearerToken(){
