@@ -2,12 +2,6 @@
  
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
-## Team KiotQR
-<img src="https://ih1.redbubble.net/image.4997207837.4825/raf,360x360,075,t,fafafa:ca443f4786.jpg" width="100"> | duc.pt@kiotviet.com
----|---
-<img src="https://cdn2-retail-images.kiotviet.vn/2024/12/23/testz11/7c6905699cee49d3850b93a2138407b2.jpg" width="100"> | **nghia.nt@kiotviet.com**
-<img src="https://cdn2-retail-images.kiotviet.vn/2024/12/23/testz11/11cb1c86cb564705a31ca2696365afc8.jpg" width="100"> | **hung.ln@kiotviet.com**
-
 ## Development server
 
 To start a local development server, run:
