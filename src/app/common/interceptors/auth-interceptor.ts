@@ -1,7 +1,7 @@
 import { HttpErrorResponse, HttpEvent, HttpEventType, HttpHandler, HttpHandlerFn, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, map, Observable, tap, throwError } from "rxjs";
-import { ServiceLocator } from "../serviceLocator";
+import { ServiceLocator } from "../service-locator";
 import { Store } from "@ngrx/store";
 import { AppStates, getBearerToken } from "../../store/app-state";
 import { Router } from "@angular/router";

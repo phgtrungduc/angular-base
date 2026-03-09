@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "kiot-qr-cpanel": {
+    "angualar-base": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/kiot-qr-cpanel",
+            "outputPath": "dist/angualar-base",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "kiot-qr-cpanel:build:production"
+              "buildTarget": "angualar-base:build:production"
             },
             "development": {
-              "buildTarget": "kiot-qr-cpanel:build:development"
+              "buildTarget": "angualar-base:build:development"
             }
           },
           "defaultConfiguration": "development"

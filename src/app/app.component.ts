@@ -12,7 +12,7 @@ import { BaseComponent } from './common/base.component';
 })
 export class AppComponent extends BaseComponent {
   // isShowSpinner$: Observable<boolean>;
-  title = 'kiot-qr-cpanel';
+  title = 'angualar-base';
   constructor() {
     super()
     // this.isShowSpinner$ =of();

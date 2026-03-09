@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'kiot-qr-cpanel' title`, () => {
+  it(`should have the 'angualar-base' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('kiot-qr-cpanel');
+    expect(app.title).toEqual('angualar-base');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, kiot-qr-cpanel');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angualar-base');
   });
 });

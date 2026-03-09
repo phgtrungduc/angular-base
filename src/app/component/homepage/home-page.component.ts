@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { LoginApiService } from '../../core/api-services/login-api.service';
 import { LoggerService } from '../../common/service/logger.service';
 import { Router } from '@angular/router';
-import { Footer } from '../Common/footer/footer.component';
-import { Header } from '../Common/header/header.component';
+import { Footer } from '../common/footer/footer.component';
+import { Header } from '../common/header/header.component';
 
 @Component({
   selector: 'home-page',

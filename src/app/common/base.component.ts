@@ -1,6 +1,6 @@
 import { Component,  InjectionToken,  Injector,  OnDestroy, Type } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ServiceLocator } from './serviceLocator';
+import { ServiceLocator } from './service-locator';
 import { Store } from '@ngrx/store';
 import { AppStates } from '../store/app-state';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';

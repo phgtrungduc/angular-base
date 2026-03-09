@@ -21,8 +21,8 @@ RUN npm run build:${env};
 ## Runner Image
 FROM nginx:latest
 
-COPY kiot-qr-cpanel.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /build/dist/kiot-qr-cpanel/browser /usr/share/nginx/html
+COPY angualar-base.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /build/dist/angualar-base/browser /usr/share/nginx/html
 
 EXPOSE 80
 

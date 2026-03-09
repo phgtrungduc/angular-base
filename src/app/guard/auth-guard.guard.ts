@@ -1,5 +1,5 @@
 import { CanActivateFn, Router } from '@angular/router';
-import { ServiceLocator } from '../common/serviceLocator';
+import { ServiceLocator } from '../common/service-locator';
 import { Store } from '@ngrx/store';
 import { AppStates, getBearerToken } from '../store/app-state';
 import { map } from 'rxjs';

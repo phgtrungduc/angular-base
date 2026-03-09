@@ -1,5 +1,5 @@
 import { Injectable, Injector } from "@angular/core";
-import { ServiceLocator } from "./common/serviceLocator";
+import { ServiceLocator } from "./common/service-locator";
 import { Store } from "@ngrx/store";
 import { AppStates } from "./store/app-state";
 import { LoadBearerTokenAction } from "./store/actions/session.action";
